@@ -1,0 +1,29 @@
+<br />
+<br />
+<h1 class="title has-text-centered">All planets and moons</h1>
+<br />
+<table class="table is-bordered is-striped is-hoverable is-fullwidth">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Planet</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Moon moon in (IEnumerable<Moon>)ViewData["Moons"]!)
+        {
+            <tr>
+            <td>@moon.Id</td>
+            <td>@moon.Name</td>
+            <td>@moon.Planet!.Name</td>
+            <td width="20%">
+                <a class="button is-warning" asp-controller="Site" asp-action="EditMoon" asp-route-moonId=@moon.Id>Edit</a>
+                <a class="button is-danger" asp-controller="Site" asp-action="DeleteMoon" asp-route-moonId=@moon.Id>Delete</a>
+            </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />

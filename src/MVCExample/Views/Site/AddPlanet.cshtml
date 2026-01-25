@@ -1,0 +1,20 @@
+<br />
+<br />
+<h1 class="title has-text-centered">Add planet</h1>
+<br />
+<form asp-controller="Site" asp-action="AddPlanet" method="post">
+    <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+            <input class="input" type="text" id="planetName" name="planetName" autofocus>
+        </div>
+    </div>
+    <div class="field is-grouped">
+        <div class="control">
+            <input class="button is-link" type="submit" value="Submit" />
+        </div>
+        <div class="control">
+            <a class="button is-link is-light" asp-controller="Site" asp-action="Home">Cancel</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,33 @@
+<br />
+<br />
+<h1 class="title has-text-centered">Add moon</h1>
+<br />
+<form asp-controller="Site" asp-action="AddMoon" method="post">
+    <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+            <input class="input" type="text" id="moonName" name="moonName" autofocus>
+        </div>
+        <br />
+        <label class="label">Planet</label>
+        <div class="control">
+            <div class="select is-fullwidth">
+                <select id="planetId" name="planetId">
+                    <option value="0" selected></option>
+                    @foreach(Planet planet in (IEnumerable<Planet>)ViewData["Planets"]!)
+                    {
+                        <option value="@planet.Id">@planet.Name</option>
+                    }
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="field is-grouped">
+        <div class="control">
+            <input class="button is-link" type="submit" value="Submit" />
+        </div>
+        <div class="control">
+            <a class="button is-link is-light" asp-controller="Site" asp-action="Home">Cancel</a>
+        </div>
+    </div>
+</form>
